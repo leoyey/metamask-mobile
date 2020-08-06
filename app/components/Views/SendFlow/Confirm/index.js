@@ -798,9 +798,10 @@ class Confirm extends PureComponent {
 				navigation && navigation.dismiss();
 			});
 		} catch (error) {
-			Alert.alert(strings('transactions.transaction_error'), error && error.message, [
+			Alert.alert(strings('transactions.transaction_error'), strings('transactions.transaction_error_msg'), [
 				{ text: strings('navigation.ok') }
 			]);
+			error && Logger.error(error, 'error while trying to send transaction (Confirm)');
 		}
 		this.setState({ transactionConfirmed: false });
 	};

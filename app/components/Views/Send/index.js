@@ -535,7 +535,7 @@ class Send extends PureComponent {
 			Alert.alert(strings('transactions.transaction_error'), strings('transactions.transaction_error_msg'), [
 				{ text: strings('navigation.ok') }
 			]);
-			error && Logger.error(error, 'error while trying to send transaction');
+			error && Logger.error(error, 'error while trying to send transaction (Send)');
 			this.setState({ transactionConfirmed: false });
 			await this.reset();
 		}
